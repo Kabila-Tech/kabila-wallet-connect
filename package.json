@@ -1,0 +1,56 @@
+{
+  "name": "@kabila-tech/kabila-wallet-connect",
+  "version": "",
+  "description": "kabila-wallet-connect",
+  "main": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "test": " tsc -b ./tsconfig.cjs.json && jasmine && rm -rf ./build",
+    "prebuild": "rm -rf ./build",
+    "build-old": "tsc && rollup -c rollup.config.js",
+    "build": "tsc && tsc -b ./tsconfig.cjs.json",
+    "lint": "eslint --ext .js,.ts .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kabila-Tech/kabila-wallet-connect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kabila-Tech/kabila-wallet-connect/issues"
+  },
+  "author": "Kabila-tech",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@types/chrome": "^0.0.237",
+    "@types/jasmine": "^4.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "jasmine": "^4.6.0",
+    "prettier": "^2.8.8",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.0.4",
+    "rollup": "^3.21.2",
+    "tslib": "^2.5.0"
+  },
+  "peerDependencies": {
+    "@hashgraph/sdk": "2.34.0"
+  },
+  "dependencies": {
+    "@hashgraph/sdk": "2.34.0"
+  }
+}
