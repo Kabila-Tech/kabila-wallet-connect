@@ -10,6 +10,9 @@ jobs:
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
+      - name: Increase version
+        id: standard-version
+        run: npx standard-version          
       - run: npm ci
       - run: npm publish
         env:
