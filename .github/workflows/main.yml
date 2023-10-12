@@ -10,6 +10,13 @@ jobs:
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
+      - name: Set Git user information
+        env:
+          CI_COMMIT_EMAIL: dev@kabila.app
+          CI_COMMIT_AUTHOR: Kabila CI
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"    
       - name: Increase version
         id: standard-version
         run: npx standard-version          
