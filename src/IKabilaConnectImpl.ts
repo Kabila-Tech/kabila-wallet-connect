@@ -1,5 +1,6 @@
 import { IKabilaConnect } from "./IKabilaConnect";
-import {KabilaSigner} from "@/entities/KabilaSigner";
+import { KabilaSigner } from "./entities/KabilaSigner";
+
 
 export class KabilaConnect implements IKabilaConnect {
   accountId: string;

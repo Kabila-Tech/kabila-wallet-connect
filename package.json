@@ -1,6 +1,6 @@
 {
-  "name": "@kabila-tech/kabila-wallet-connect",
-  "version": "",
+  "name": "kabila-wallet-connect",
+  "version": "1.0.0",
   "description": "kabila-wallet-connect",
   "main": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
@@ -10,6 +10,9 @@
       "require": "./dist/cjs/index.js"
     },
     "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
     "/dist"

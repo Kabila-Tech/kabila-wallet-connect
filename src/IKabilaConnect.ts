@@ -1,4 +1,4 @@
-import { KabilaSigner } from "src/entities/KabilaSigner";
+import { KabilaSigner } from "./entities/KabilaSigner";
 
 export interface IKabilaConnect {
   accountId: string,
